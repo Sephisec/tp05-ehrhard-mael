@@ -1,7 +1,7 @@
 .search-bar {
   display: flex;
   align-items: center;
-  margin-bottom: 20px; /* Ajoutez une marge au besoin */
+  margin-bottom: 20px;
 }
 
 .search-input {
@@ -9,5 +9,12 @@
   font-size: 14px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  margin-right: 10px; /* Ajoutez une marge à droite pour l'espace entre le champ de recherche et le bouton si nécessaire */
+  margin-right: 10px;
 }
+
+.search-text {
+  margin-right: 10px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+}
+
