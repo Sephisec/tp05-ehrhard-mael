@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { map, Observable} from "rxjs";
-import {Product} from "../models/product";
+import {Product} from "../shared/models/product.model";
 @Pipe({
   name: 'searchProducts'
 })

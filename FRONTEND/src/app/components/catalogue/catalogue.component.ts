@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import { Observable} from "rxjs";
 import {ApiService} from "../../services/api.service";
-import {Product} from "../../models/product";
+import {Product} from "../../shared/models/product.model";
 
 @Component({
   selector: 'app-catalogue',
