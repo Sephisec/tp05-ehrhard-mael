@@ -1,0 +1,13 @@
+.search-bar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px; /* Ajoutez une marge au besoin */
+}
+
+.search-input {
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px; /* Ajoutez une marge à droite pour l'espace entre le champ de recherche et le bouton si nécessaire */
+}
