@@ -1,4 +1,4 @@
 <p>cart works!</p>
-<div *ngFor="let product of addedProducts">
+<div *ngFor="let product of addedProducts$ | async">
   <p>{{product.name}}</p>
 </div>
