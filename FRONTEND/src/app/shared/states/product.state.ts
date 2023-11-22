@@ -1,6 +1,7 @@
 import {Action, Selector, State, StateContext} from "@ngxs/store";
 import {ProductStateModel} from "../models/product.state.model";
 import {AddProduct, RemoveProduct} from "../actions/product.actions";
+import {Injectable} from "@angular/core";
 
 @State<ProductStateModel>({
   name: 'products',
@@ -8,11 +9,13 @@ import {AddProduct, RemoveProduct} from "../actions/product.actions";
     products: []
   }
 })
+
+@Injectable()
 export class ProductState{
   @Selector()
   static getProducts(state: ProductStateModel)
   {
-    return state.products;
+    return state.products ?? [];
   }
 
   @Action(AddProduct)

@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import {Product} from "../../shared/models/product.model";
-import {Store} from "@ngxs/store";
-import {ProductStateModel} from "../../shared/models/product.state.model";
-import {ProductState} from "../../shared/states/product.state";
+import {Select} from "@ngxs/store";
 import {Observable} from "rxjs";
+import {ProductState} from "../../shared/states/product.state";
 
 @Component({
   selector: 'app-cart',
@@ -11,8 +10,7 @@ import {Observable} from "rxjs";
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent {
-  constructor(private store: Store) {
-    this.addedProducts$ = this.store.select<Product[]>(state => state.products)
+  constructor() {
   }
-  addedProducts$: Observable<Product[]>;
+  @Select(ProductState.getProducts) addedProducts$: Observable<Product[]>;
 }
