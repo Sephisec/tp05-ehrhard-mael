@@ -1,4 +1,5 @@
 <p>Number of products : {{productNumber$|async}}</p>
 <div *ngFor="let product of addedProducts$ | async">
   <p>{{product.name}}</p>
+  <button (click)="onProductDelete(product)">Remove from cart</button>
 </div>
