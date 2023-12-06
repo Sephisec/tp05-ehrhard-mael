@@ -11,7 +11,6 @@ const allowedUsers = [
         login: "emma",
         email : "martin.jean@gmail.com",
         password : "toto",
-        id : uuid
     }
 ]
 
@@ -62,6 +61,10 @@ exports.login = (req, res) => {
 
 
             res.send(utilisateur);
+        }
+        else
+        {
+            res.send("Error");
         }
     }
 };
