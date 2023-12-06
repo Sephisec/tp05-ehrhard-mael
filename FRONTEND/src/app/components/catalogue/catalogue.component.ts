@@ -14,7 +14,7 @@ export class CatalogueComponent{
 
   constructor(private readonly catalogueService: ApiService,
               private readonly store: Store) {
-    this.products$ = this.catalogueService.getProducts();
+    this.products$ = this.catalogueService.getCatalogue();
     this.productCount$ = this.store.select(state => state.products).pipe(reduce((sum, val) => sum+val));
   }
 
