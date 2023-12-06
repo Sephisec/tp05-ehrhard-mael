@@ -43,13 +43,10 @@ exports.login = (req, res) => {
         const uuid = uuidv4 ();
         if(isUserValid(utilisateur))
         {
-            const utilisateur = {
-                ...,
-                nom: "martin",
-                prenom: "jean",
-                email : "martin.jean@gmail.com",
-                id : uuid
-            };
+            utilisateur.nom = "martin";
+            utilisateur.prenom= "jean";
+            utilisateur.email = "martin.jean@gmail.com";
+            utilisateur.id= uuid;
 
             const user = {
                 id: utilisateur.id,
