@@ -10,6 +10,7 @@ import { ProductSearchComponent } from './components/catalogue/product-search/pr
 import {NgxsModule} from "@ngxs/store";
 import {ProductState} from "./shared/states/product.state";
 import {CartComponent} from "./components/cart/cart.component";
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import {CartComponent} from "./components/cart/cart.component";
     ProductSearchComponent,
     CartComponent,
     SearchProductsPipe,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
