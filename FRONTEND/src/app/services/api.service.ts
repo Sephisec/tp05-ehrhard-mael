@@ -20,6 +20,7 @@ export class ApiService {
       }),
     };
     data = 'login=' + login + '&password=' + password;
+    console.log(data);
     return this.http.post<Client>(
       environment.backendLoginClient,
       data,
