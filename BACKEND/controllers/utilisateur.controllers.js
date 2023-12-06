@@ -15,6 +15,16 @@ const allowedUsers = [
     }
 ]
 
+function isUserValid(user)
+{
+    for (const u of allowedUsers) {
+        if (u.login === user.login && u.password === user.password) {
+            return true;
+        }
+    }
+    return false;
+}
+
 function generateAccessToken(user) {
     return jwt.sign(user, ACCESS_TOKEN_SECRET, { expiresIn: '365d' });
 }
@@ -26,42 +36,37 @@ exports.login = (req, res) => {
         password: req.body.password
     };
 
-    allowedUsers.forEach((u) => {
-        if(!(u.login === utilisateur.login && u.password === utilisateur.password))
-        {
-            throw new Error("Invalid credentials");
-        }
-    });
-
     // Test
     let pattern = /^[A-Za-z0-9]{1,20}$/;
     if (pattern.test(utilisateur.login) && pattern.test(utilisateur.password)) {
 
         const uuid = uuidv4 ();
-        const utilisateur = {
-            nom: "martin",
-            prenom: "jean",
-            login: "marsstin",
-            email : "martin.jean@gmail.com",
-            password : "toto",
-            id : uuid
-        };
+        if(isUserValid(utilisateur))
+        {
+            const utilisateur = {
+                ...,
+                nom: "martin",
+                prenom: "jean",
+                email : "martin.jean@gmail.com",
+                id : uuid
+            };
 
-        const user = {
-            id: utilisateur.id,
-            name: utilisateur.nom,
-            email: utilisateur.email
-        };
-
-
-        let accessToken = generateAccessToken(user);
-        res.setHeader('Authorization', `Bearer ${accessToken}`);
-
-        console.log (accessToken);
+            const user = {
+                id: utilisateur.id,
+                name: utilisateur.nom,
+                email: utilisateur.email
+            };
 
 
-        res.send(utilisateur);
-    };
+            let accessToken = generateAccessToken(user);
+            res.setHeader('Authorization', `Bearer ${accessToken}`);
+
+            console.log (accessToken);
+
+
+            res.send(utilisateur);
+        }
+    }
 };
 
 
