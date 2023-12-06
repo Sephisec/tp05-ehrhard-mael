@@ -1,5 +1,5 @@
 export const environment = {
   production: false,
-  backendLoginClient: 'https://cnamdocker.onrender.com/api/utilisateur/login',
-  backendCatalogue: 'https://cnamdocker.onrender.com/api/catalogue',
+  backendLoginClient: 'https://tp05-ehrhard-mael.onrender.com/api/utilisateur/login',
+  backendCatalogue: 'https://tp05-ehrhard-mael.onrender.com/api/catalogue',
 };

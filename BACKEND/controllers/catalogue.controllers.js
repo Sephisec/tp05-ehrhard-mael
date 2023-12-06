@@ -1,16 +1,56 @@
 exports.get = (req, res) => {
   const catalogue = [
-    { ref: "A", titre: "Smartphone", prix: 899.99 },
-    { ref: "B", titre: "Laptop", prix: 619.99 },
-    { ref: "C", titre: "Headphones", prix: 299.99 },
-    { ref: "D", titre: "Smartwatch", prix: 199.99 },
-    { ref: "E", titre: "Robot vacuum cleaner", prix: 335.88 },
-    { ref: "F", titre: "VR headset", prix: 349.99 },
-    { ref: "G", titre: "Bicycle", prix: 600 },
-    { ref: "H", titre: "Printer", prix: 120 },
-    { ref: "I", titre: "Drone", prix: 199.99 },
-    { ref: "J", titre: "Shower gel", prix: 12.5 },
-  ];
+        {
+          ref: "REF001",
+          titre: "Laptop",
+          prix: 999.99
+        },
+        {
+          ref: "REF002",
+          titre: "Smartphone",
+          prix: 599.99
+        },
+        {
+          ref: "REF003",
+          titre: "Tablet",
+          prix: 299.99
+        },
+        {
+          ref: "REF004",
+          titre: "Headphones",
+          prix: 49.99
+        },
+        {
+          ref: "REF005",
+          titre: "Television",
+          prix: 799.99
+        },
+        {
+          ref: "REF006",
+          titre: "Coffee Maker",
+          prix: 79.99
+        },
+        {
+          ref: "REF007",
+          titre: "Gaming Console",
+          prix: 399.99
+        },
+        {
+          ref: "REF008",
+          titre: "Camera",
+          prix: 199.99
+        },
+        {
+          ref: "REF009",
+          titre: "Bluetooth Speaker",
+          prix: 29.99
+        },
+        {
+          ref: "REF010",
+          titre: "Watch",
+          prix: 199.99
+        }
+      ]
 
   res.setHeader("Content-Type", "application/json");
 
