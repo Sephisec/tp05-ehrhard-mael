@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {Product} from "../shared/models/product.model";
 import {Observable} from "rxjs";
 import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {ClientModel} from "../models/client.model";
+import {Client} from "../models/client.model";
 import {environment} from "../../environments/environment";
 
 @Injectable({
@@ -12,7 +12,7 @@ export class ApiService {
 
   constructor(private http: HttpClient) {}
 
-  public loginClient(login: string, password: string): Observable<ClientModel> {
+  public loginClient(login: string, password: string): Observable<Client> {
     let data: String;
     let httpOptions = {
       headers: new HttpHeaders({
@@ -20,7 +20,7 @@ export class ApiService {
       }),
     };
     data = 'login=' + login + '&password=' + password;
-    return this.http.post<ClientModel>(
+    return this.http.post<Client>(
       environment.backendLoginClient,
       data,
       httpOptions
