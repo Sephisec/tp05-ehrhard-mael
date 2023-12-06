@@ -1,15 +1,13 @@
 import { Injectable } from '@angular/core';
-import {Product} from "../shared/models/product.model";
-import {Observable} from "rxjs";
-import {HttpClient, HttpHeaders} from "@angular/common/http";
-import {Client} from "../models/client.model";
-import {environment} from "../../environments/environment";
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
-@Injectable({
-  providedIn: 'root'
-})
+import { Observable } from 'rxjs';
+import { Client } from './models/client';
+import { Produit } from './models/produit';
+import { environment } from '../environments/environment';
+
+@Injectable()
 export class ApiService {
-
   constructor(private http: HttpClient) {}
 
   public loginClient(login: string, password: string): Observable<Client> {
@@ -20,7 +18,6 @@ export class ApiService {
       }),
     };
     data = 'login=' + login + '&password=' + password;
-    console.log(data);
     return this.http.post<Client>(
       environment.backendLoginClient,
       data,
@@ -28,7 +25,7 @@ export class ApiService {
     );
   }
 
-  public getCatalogue(): Observable<Product[]> {
-    return this.http.get<Product[]>(environment.backendCatalogue);
+  public getCalague(): Observable<Produit[]> {
+    return this.http.get<Produit[]>(environment.backendCatalogue);
   }
 }
